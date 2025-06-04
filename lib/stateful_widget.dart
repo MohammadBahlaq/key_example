@@ -26,6 +26,8 @@ class _ColoredBoxStatefulWidgetState extends State<ColoredBoxStatefulWidget> {
       height: 100,
       margin: const EdgeInsets.all(8),
       color: color,
+      alignment: Alignment.center,
+      child: Text("Stateful"),
     );
   }
 }

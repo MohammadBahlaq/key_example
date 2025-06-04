@@ -35,7 +35,7 @@ class _KeyExampleState extends State<KeyExample> {
   void toggleKeys() {
     setState(() {
       useKeys = !useKeys;
-      buildWidgets(); // rebuild the list with or without keys
+      buildWidgets();
     });
   }
 
