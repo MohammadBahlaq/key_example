@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:key_example/stateful_widget.dart';
 import 'package:key_example/stateless_widget.dart';
 
 class KeyExample extends StatefulWidget {
@@ -21,8 +22,10 @@ class _KeyExampleState extends State<KeyExample> {
 
   void buildWidgets() {
     widgets = [
-      ColoredBoxStatelessWidget(key: useKeys ? const ValueKey("1") : null),
-      ColoredBoxStatelessWidget(key: useKeys ? const ValueKey("2") : null),
+      ///Local keys
+      ColoredBoxStatelessWidget(key: useKeys ? ObjectKey(Note()) : null),
+      ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
+      ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
     ];
   }
 
