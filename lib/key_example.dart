@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:key_example/stateful_widget.dart';
 import 'package:key_example/stateless_widget.dart';
@@ -23,9 +25,11 @@ class _KeyExampleState extends State<KeyExample> {
   void buildWidgets() {
     widgets = [
       ///Local keys
-      ColoredBoxStatelessWidget(key: useKeys ? ObjectKey(Note()) : null),
+      // ColoredBoxStatelessWidget(key: useKeys ? ObjectKey(Note()) : null),
+      // ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
+      // ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
       ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
-      ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
+      ColoredBoxStatefulWidget(key: useKeys ? ValueKey(2) : null),
     ];
   }
 
