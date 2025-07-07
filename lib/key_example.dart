@@ -34,7 +34,7 @@ class _KeyExampleState extends State<KeyExample> {
       ),
 
       // ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
-      // ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
+      // ColoredBoxStatefulWidget(key: useKeys ? ValueKey(2) : null),
     ];
   }
 
