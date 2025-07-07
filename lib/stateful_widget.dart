@@ -3,7 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ColoredBoxStatefulWidget extends StatefulWidget {
-  const ColoredBoxStatefulWidget({super.key});
+  const ColoredBoxStatefulWidget({super.key, required this.text});
+  final String text;
 
   @override
   State<ColoredBoxStatefulWidget> createState() =>
@@ -27,7 +28,7 @@ class _ColoredBoxStatefulWidgetState extends State<ColoredBoxStatefulWidget> {
       margin: const EdgeInsets.all(8),
       color: color,
       alignment: Alignment.center,
-      child: Text("Stateful"),
+      child: Text(widget.text),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:key_example/stateful_widget.dart';
-import 'package:key_example/stateless_widget.dart';
 
 class KeyExample extends StatefulWidget {
   const KeyExample({super.key});
@@ -23,14 +22,24 @@ class _KeyExampleState extends State<KeyExample> {
   void buildWidgets() {
     widgets = [
       ///Local keys
-      ColoredBoxStatelessWidget(key: useKeys ? ObjectKey(Note()) : null),
-      ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
-      ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
+      ColoredBoxStatefulWidget(
+        key: useKeys ? ValueKey(1) : null,
+        text: 'Stateful 1',
+      ),
+      ColoredBoxStatefulWidget(
+        key: useKeys ? ValueKey(2) : null,
+        text: 'Stateful 2',
+      ),
+
+      // ColoredBoxStatefulWidget(key: useKeys ? ValueKey(1) : null),
+      // ColoredBoxStatefulWidget(key: useKeys ? UniqueKey() : null),
     ];
   }
 
   void swap() {
     setState(() {
+      //537
+      //421
       widgets.insert(1, widgets.removeAt(0));
     });
   }
@@ -63,7 +72,7 @@ class _KeyExampleState extends State<KeyExample> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: swap,
-        child: const Icon(Icons.swap_horiz),
+        child: const Icon(Icons.swap_horiz_rounded),
       ),
     );
   }
